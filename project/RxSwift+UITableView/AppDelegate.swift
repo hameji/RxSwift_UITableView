@@ -3,7 +3,7 @@
 //  RxSwift+UITableView
 //
 //  Created by Hajime Taniguchi on 2021/12/12.
-//
+//  参考: https://qiita.com/SHOBLOG/items/5083e43558581cbf0dee
 
 import UIKit
 

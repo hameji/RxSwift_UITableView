@@ -18,13 +18,29 @@ class ViewController: UIViewController {
             tableView.register(repositoryCell, forCellReuseIdentifier: "RepositoryCell")
         }
     }
+    
+    private var repositories: [Repository] = [] {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        GithubAPI.fetchRepository(text: "hameji") { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let repos):
+                print(repos.count)
+                self?.repositories = repos
+            }
+        }
     }
-
-
 }
 
 extension ViewController: UITableViewDelegate {
@@ -33,11 +49,13 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return repositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell", for: indexPath) as! RepositoryCell
+        let repoData = repositories[indexPath.row]
+        cell.bind(data: repoData)
         return cell
     }
 }

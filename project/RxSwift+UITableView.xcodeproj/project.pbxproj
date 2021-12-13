@@ -18,6 +18,7 @@
 		636ECF5B2766C5610000AE40 /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636ECF592766C5610000AE40 /* RepositoryCell.xib */; };
 		636ECF5D2766C9A70000AE40 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636ECF5C2766C9A70000AE40 /* GithubAPI.swift */; };
 		636ECF5F2766CB6A0000AE40 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636ECF5E2766CB6A0000AE40 /* Repository.swift */; };
+		63AF725A2767812100C1F124 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF72592767812100C1F124 /* RepositoriesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		636ECF592766C5610000AE40 /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		636ECF5C2766C9A70000AE40 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		636ECF5E2766CB6A0000AE40 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		63AF72592767812100C1F124 /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
 		FDC116969AFD4B6A704E7C88 /* Pods-RxSwift+UITableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift+UITableView.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift+UITableView/Pods-RxSwift+UITableView.debug.xcconfig"; sourceTree = "<group>"; };
 		FECA98855672DE905A7060F2 /* Pods_RxSwift_UITableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_UITableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -90,17 +92,50 @@
 			children = (
 				633B35102766BA1300DCAB03 /* AppDelegate.swift */,
 				633B35122766BA1300DCAB03 /* SceneDelegate.swift */,
-				633B35142766BA1300DCAB03 /* ViewController.swift */,
-				636ECF5E2766CB6A0000AE40 /* Repository.swift */,
-				636ECF5C2766C9A70000AE40 /* GithubAPI.swift */,
-				633B35162766BA1300DCAB03 /* Main.storyboard */,
-				636ECF582766C5610000AE40 /* RepositoryCell.swift */,
-				636ECF592766C5610000AE40 /* RepositoryCell.xib */,
+				63AF725D2767813E00C1F124 /* Model */,
+				63AF725C2767813400C1F124 /* ViewModel */,
+				63AF725E2767818300C1F124 /* ViewController */,
+				63AF725B2767812D00C1F124 /* View */,
 				633B35192766BA1500DCAB03 /* Assets.xcassets */,
 				633B351B2766BA1500DCAB03 /* LaunchScreen.storyboard */,
 				633B351E2766BA1500DCAB03 /* Info.plist */,
 			);
 			path = "RxSwift+UITableView";
+			sourceTree = "<group>";
+		};
+		63AF725B2767812D00C1F124 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				633B35162766BA1300DCAB03 /* Main.storyboard */,
+				636ECF592766C5610000AE40 /* RepositoryCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63AF725C2767813400C1F124 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63AF72592767812100C1F124 /* RepositoriesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		63AF725D2767813E00C1F124 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				636ECF5E2766CB6A0000AE40 /* Repository.swift */,
+				636ECF5C2766C9A70000AE40 /* GithubAPI.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63AF725E2767818300C1F124 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				633B35142766BA1300DCAB03 /* ViewController.swift */,
+				636ECF582766C5610000AE40 /* RepositoryCell.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +256,7 @@
 				633B35152766BA1300DCAB03 /* ViewController.swift in Sources */,
 				636ECF5D2766C9A70000AE40 /* GithubAPI.swift in Sources */,
 				633B35112766BA1300DCAB03 /* AppDelegate.swift in Sources */,
+				63AF725A2767812100C1F124 /* RepositoriesViewModel.swift in Sources */,
 				633B35132766BA1300DCAB03 /* SceneDelegate.swift in Sources */,
 				636ECF5A2766C5610000AE40 /* RepositoryCell.swift in Sources */,
 				636ECF5F2766CB6A0000AE40 /* Repository.swift in Sources */,

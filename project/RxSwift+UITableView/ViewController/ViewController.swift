@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
     
@@ -27,6 +29,8 @@ class ViewController: UIViewController {
         }
     }
     
+    private let viewModel: 
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +44,10 @@ class ViewController: UIViewController {
                 self?.repositories = repos
             }
         }
+    }
+    
+    private func bind() {
+        
     }
 }
 

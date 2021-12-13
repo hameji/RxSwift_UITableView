@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RepositoryCell: UITableViewCell {
     
@@ -16,7 +17,8 @@ class RepositoryCell: UITableViewCell {
     
     @IBOutlet weak var starImageView: UIImageView! {
         didSet {
-            starImageView.image = UIImage(systemName: "star") // tintColor: UIColor.systemGray)
+            starImageView.image = UIImage(systemName: "star")
+            starImageView.tintColor = UIColor.gray
         }
     }
     @IBOutlet weak var starCountLabel: UILabel!
@@ -28,11 +30,11 @@ class RepositoryCell: UITableViewCell {
     }
     
     func bind(data: Repository) {
-        ownerImageView.image = nil
+        let ownerURL = URL(string: data.owner.avatarUrl)
+        ownerImageView.kf.setImage(with: ownerURL)
         ownerNameLabel.text = data.owner.login
         repositoryNameLabel.text = data.fullName
         repositoryDescriptionLabel.text = data.description
-        starImageView.image = nil
         starCountLabel.text = "\(data.stargazersCount)"
         languageLabel.text = data.language
         

@@ -13,6 +13,9 @@ class ViewController: UIViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            
+            let repositoryCell = UINib(nibName: "RepositoryCell", bundle: nil)
+            tableView.register(repositoryCell, forCellReuseIdentifier: "RepositoryCell")
         }
     }
 
@@ -34,7 +37,8 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell", for: indexPath)
+        return cell
     }
 }
 
